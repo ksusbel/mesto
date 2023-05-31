@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="портфолио Оксаны Беляковой на Яндекс Практикуме">
+        <meta name="keywords" content="html, css, javascript">
+        <meta name="author" content="Оксана Белякова">
+        <title lang="en">Mesto</title>
+        <link type="text/css" rel="stylesheet" href="pages/index.css">
+    </head>
+    <body class="page">
+        <header class="header">
+            <div class="header__logo"></div>
+        </header>
+        <main class="content">
+            <section class="profile">
+                <div class="profile__avatar"></div>
+                <div class="profile__info">
+                    <div class="profile__block">
+                        <h1 class="profile__name">Жак-Ив Кусто</h1>
+                        <div class="profile__edit-button"></div>
+                    </div>
+                    <p class="profile__description">Исследователь океана</p>
+                </div>
+                <div class="profile__add-button"></div>
+            </section>
+            <section class="elements">
+                <div class="elements__element">
+                    <img class="elements__photo-grid" src="./images/baikal1.jpg" alt="Озеро Байкал">
+                    <div class="elements__block">
+                        <h2 class="elements__title">Озеро Байкал</h2>
+                        <div class="elements__hard"></div>
+                    </div>
+                </div>
+                <div class="elements__element">
+                    <img class="elements__photo-grid" src="./images/kamchatka.jpg" alt="Камчатка">
+                    <div class="elements__block">
+                        <h2 class="elements__title">Камчатка</h2>
+                        <div class="elements__hard"></div>
+                    </div>
+                </div>
+                <div class="elements__element">
+                    <img class="elements__photo-grid" src="./images/karelia.jpg" alt="Карелия">
+                    <div class="elements__block">
+                        <h2 class="elements__title">Карелия</h2>
+                        <div class="elements__hard"></div>
+                    </div>
+                </div>
+                <div class="elements__element">
+                    <img class="elements__photo-grid" src="./images/krasnoyarsk.jpg" alt="Красноярский край">
+                    <div class="elements__block">
+                        <h2 class="elements__title">Красноярский край</h2>
+                        <div class="elements__hard"></div>
+                    </div>
+                </div>
+                <div class="elements__element">
+                    <img class="elements__photo-grid" src="./images/onega_lake.jpg" alt="Онежское озеро">
+                    <div class="elements__block">
+                        <h2 class="elements__title">Онежское озеро</h2>
+                        <div class="elements__hard"></div>
+                    </div>
+                </div>
+                <div class="elements__element">
+                    <img class="elements__photo-grid" src="./images/viborg.jpg" alt="Выборг">
+                    <div class="elements__block">
+                        <h2 class="elements__title">Выборг</h2>
+                        <div class="elements__hard"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="footer__copyright" lang="en">&copy; 2023 Mesto Russia</p>
+        </footer>
+        <div class="popup">
+            <div class="popup__overflow"></div>
+            <div class="popup__container">
+                <div class="popup__close"></div>
+                <form class="popup__form">
+                    <h2 class="popup__form-title">Редактировать профиль</h2>
+                    <input type="text" class="popup__form-field popup__form-field-name" placeholder="Имя">
+                    <input type="text" class="popup__form-field popup__form-field-job" placeholder="О себе">
+                    <input type="submit" class="popup__form-save" value="Сохранить">
+                </form>
+            </div>
+        </div>
+        <script src="js/mesto.js"></script>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+.popup__container {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -141px;
+    margin-top: -177px;
+}
+
+@media screen and (min-width: 768px) {
+    .popup__container {
+        margin-left: -231px;
+        margin-top: -177px;
+    }
+}
