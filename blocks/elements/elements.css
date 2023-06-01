@@ -1,14 +1,11 @@
 .elements {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(282px, 1fr));
-  gap: 12px;
-  width: 100%;
-  max-width: 880px;
-  margin: 36px auto 0 auto;
+    max-width: 320px;
+    margin: 36px auto 0 auto;
 }
 
 @media screen and (min-width: 768px) {
-  .elements {
-      margin: 46px auto 0 auto;
+    .elements {
+        max-width: 880px;
+        margin: 46px auto 0 auto;
+    }
   }
-}
