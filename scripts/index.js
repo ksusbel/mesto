@@ -47,10 +47,10 @@ initialCards.forEach(function (element) {
     });
 
     const imgButton = cardElement.querySelector(".elements__photo-grid");
-    const imgPopup = document.querySelector(".popup__full_img");
+    const imgPopup = document.querySelector("#popup_full_img");
     const imgFull = document.querySelector(".popup__img-full");
     const imgTitle = document.querySelector(".popup__img-title");
-    const closeImgButton = document.querySelector(".popup__close-img");
+    const closeImgButton = document.querySelector("#popup_close_img");
 
     function popupImgOpened() {
         imgPopup.classList.remove("popup_fading");
@@ -73,13 +73,13 @@ initialCards.forEach(function (element) {
 });
 
 const editButton = document.querySelector(".profile__edit-button");
-const editPopup = document.querySelector(".popup__edit_prof");
-const closeEditButton = document.querySelector(".popup__close-edit");
+const editPopup = document.querySelector("#popup_edit_prof");
+const closeEditButton = document.querySelector("#popup_close_edit");
 // Находим форму в DOM
-const formEditElement = document.querySelector(".popup__form-edit");
+const formEditElement = document.querySelector("#popup_form_edit");
 // Находим поля формы в DOM
-const nameInput = document.querySelector(".popup__form-field_name");
-const jobInput = document.querySelector(".popup__form-field_job");
+const nameInput = document.querySelector("#popup_form_field_name");
+const jobInput = document.querySelector("#popup_form_field_job");
 // Выберите элементы, куда должны быть вставлены значения полей
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
@@ -116,10 +116,10 @@ function handleEditFormSubmit(evt) {
 formEditElement.addEventListener("submit", handleEditFormSubmit);
 
 const addButton = document.querySelector(".profile__add-button");
-const addPopup = document.querySelector(".popup__add_card");
-const closeAddButton = document.querySelector(".popup__close-add");
+const addPopup = document.querySelector("#popup_add_card");
+const closeAddButton = document.querySelector("#popup_close_add");
 // Находим форму в DOM
-const formAddElement = document.querySelector(".popup__form-add");
+const formAddElement = document.querySelector("#popup_form_add");
 
 function popupAddOpened() {
     addPopup.classList.remove("popup_fading");
@@ -141,8 +141,8 @@ function handleAddFormSubmit(evt) {
 
     const cardElementNew = cardConteiner.cloneNode(true);
 
-    const namePlaceInput = document.querySelector(".popup__form-field_name-place");
-    const linkPlaceInput = document.querySelector(".popup__form-field_link-place");
+    const namePlaceInput = document.querySelector("#popup_form_field_name_place");
+    const linkPlaceInput = document.querySelector("#popup_form_field_link_place");
 
     cardElementNew.querySelector(".elements__title").textContent = namePlaceInput.value;
     cardElementNew.querySelector(".elements__photo-grid").src = linkPlaceInput.value;
@@ -164,10 +164,10 @@ function handleAddFormSubmit(evt) {
     });
 
     const imgButton = cardElementNew.querySelector(".elements__photo-grid");
-    const imgPopup = document.querySelector(".popup__full-img");
+    const imgPopup = document.querySelector("#popup_full_img");
     const imgFull = document.querySelector(".popup__img-full");
     const imgTitle = document.querySelector(".popup__img-title");
-    const closeImgButton = document.querySelector(".popup__close-img");
+    const closeImgButton = document.querySelector("#popup_close_img");
 
     function popupImgOpened() {
         imgPopup.classList.remove("popup_fading");
