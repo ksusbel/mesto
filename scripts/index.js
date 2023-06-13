@@ -47,7 +47,7 @@ initialCards.forEach(function (element) {
     });
 
     const imgButton = cardElement.querySelector(".elements__photo-grid");
-    const imgPopup = document.querySelector(".popup__full-img");
+    const imgPopup = document.querySelector(".popup__full_img");
     const imgFull = document.querySelector(".popup__img-full");
     const imgTitle = document.querySelector(".popup__img-title");
     const closeImgButton = document.querySelector(".popup__close-img");
@@ -73,7 +73,7 @@ initialCards.forEach(function (element) {
 });
 
 const editButton = document.querySelector(".profile__edit-button");
-const editPopup = document.querySelector(".popup__edit-prof");
+const editPopup = document.querySelector(".popup__edit_prof");
 const closeEditButton = document.querySelector(".popup__close-edit");
 // Находим форму в DOM
 const formEditElement = document.querySelector(".popup__form-edit");
@@ -116,7 +116,7 @@ function handleEditFormSubmit(evt) {
 formEditElement.addEventListener("submit", handleEditFormSubmit);
 
 const addButton = document.querySelector(".profile__add-button");
-const addPopup = document.querySelector(".popup__add-card");
+const addPopup = document.querySelector(".popup__add_card");
 const closeAddButton = document.querySelector(".popup__close-add");
 // Находим форму в DOM
 const formAddElement = document.querySelector(".popup__form-add");
