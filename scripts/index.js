@@ -53,10 +53,14 @@ initialCards.forEach(function (element) {
     const closeImgButton = document.querySelector(".popup__close-img");
 
     function popupImgOpened() {
+        imgPopup.classList.remove("popup_fading");
         imgPopup.classList.add("popup_opened");
     }
     function popupImgClose() {
-        imgPopup.classList.remove("popup_opened");
+        imgPopup.classList.add("popup_fading");
+        setTimeout(() => {
+            imgPopup.classList.remove("popup_opened");
+        }, 1000);
     }
 
     imgButton.addEventListener("click", function () {
@@ -81,10 +85,14 @@ const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 
 function popupEditOpened() {
+    editPopup.classList.remove("popup_fading");
     editPopup.classList.add("popup_opened");
 }
 function popupEditClose() {
-    editPopup.classList.remove("popup_opened");
+    editPopup.classList.add("popup_fading");
+    setTimeout(() => {
+        editPopup.classList.remove("popup_opened");
+    }, 1000);
 }
 
 editButton.addEventListener("click", popupEditOpened);
@@ -114,10 +122,14 @@ const closeAddButton = document.querySelector(".popup__close-add");
 const formAddElement = document.querySelector(".popup__form-add");
 
 function popupAddOpened() {
+    addPopup.classList.remove("popup_fading");
     addPopup.classList.add("popup_opened");
 }
 function popupAddClose() {
-    addPopup.classList.remove("popup_opened");
+    addPopup.classList.add("popup_fading");
+    setTimeout(() => {
+        addPopup.classList.remove("popup_opened");
+    }, 1000);
 }
 
 addButton.addEventListener("click", popupAddOpened);
@@ -158,10 +170,14 @@ function handleAddFormSubmit(evt) {
     const closeImgButton = document.querySelector(".popup__close-img");
 
     function popupImgOpened() {
+        imgPopup.classList.remove("popup_fading");
         imgPopup.classList.add("popup_opened");
     }
     function popupImgClose() {
-        imgPopup.classList.remove("popup_opened");
+        imgPopup.classList.add("popup_fading");
+        setTimeout(() => {
+            imgPopup.classList.remove("popup_opened");
+        }, 1000);
     }
 
     imgButton.addEventListener("click", function () {

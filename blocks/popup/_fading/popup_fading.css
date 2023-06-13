@@ -1,0 +1,13 @@
+@keyframes fadingD {
+     from {
+         opacity: 1;
+     }
+     to {
+         opacity: 0;
+     }
+ }
+ 
+ .popup_fading {
+     animation: fadingD 0.5s linear forwards;
+ }
+ 
