@@ -1,4 +1,5 @@
-.elements__hard {
+.elements__heart {
+  background-image: url("../../../images/Vector_hard.png");
   background-size: contain;
   background-repeat: no-repeat;
   width: 22px;
@@ -7,8 +8,9 @@
   cursor: pointer;
   border: none;
   background-color: #fff;
+  
 }
 
-.elements__hard:hover {
+.elements__heart:hover {
   opacity: 0.5;
 }

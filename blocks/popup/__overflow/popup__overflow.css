@@ -1,6 +1,5 @@
 .popup__overflow {
     background: #000000;
-    opacity: 0.5;
     margin: 0;
     z-index: 1;
     position: fixed;
