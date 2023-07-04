@@ -10,13 +10,12 @@
   border: 1px solid #000;
   border-radius: 2px;
   cursor: pointer;
-  margin: 15px 0 0 0;
+  margin: 45px 0 0 0;
 }
 
 @media screen and (min-width: 768px) {
   .popup__form-save {
       height: 50px;
-      margin: 15px 0 0 0;
       font-size: 18px;
       line-height: 22px;
   }

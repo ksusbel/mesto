@@ -41,3 +41,7 @@
 @import url(../blocks/popup/__cont-img/popup__cont-img.css);
 @import url(../blocks/popup/__overflow/_background_dark/popup__overflow_background_dark.css);
 @import url(../blocks/popup/__overflow/_background_light/popup__overflow_background_light.css);
+@import url(../blocks/popup/__form-save/_disabled/popup__form-save_disabled.css);
+@import url(../blocks/popup/__form-field/_invalid/popup__form-field_invalid.css);
+@import url(../blocks/popup/__form-error/popup__form-error.css);
+@import url(../blocks/popup/__form-error/_hidden/popup__form-error_hidden.css);

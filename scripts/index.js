@@ -6,6 +6,7 @@ const cardConteiner = cardsTemplate.querySelector(".elements__element");
 const cardsList = document.querySelector(".elements__list");
 const formAddElement = document.querySelector("#popup_form_add");
 const closeButtons = document.querySelectorAll(".popup__close");
+const popupMod = document.querySelectorAll(".popup");
 
 function openPopup(popup) {
     popup.classList.add("popup_opened");
@@ -19,6 +20,22 @@ closeButtons.forEach(function (item) {
     item.addEventListener("click", function (e) {
         const parentModal = this.closest(".popup");
         closePopup(parentModal);
+    });
+});
+
+popupMod.forEach(function (item) {
+    item.addEventListener("click", (evt) => {
+        if (evt.target === item.querySelector(".popup__overflow")) {
+            closePopup(item);
+        }
+    });
+});
+
+popupMod.forEach(function (item) {
+    document.addEventListener("keydown", (evt) => {
+        if (evt.key === "Escape") {
+            closePopup(item);
+        }
     });
 });
 
