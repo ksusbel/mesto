@@ -43,9 +43,9 @@
                     <h2 class="popup__form-title">Редактировать профиль</h2>
                     <div class="popup__form-fields">
                         <input type="text" class="popup__form-field" id="popup_form_field_name" name="popup_form_field_name" autocomplete="off" placeholder="Имя" minlength="2" maxlength="40" required>
-                        <span class="popup_form_field_name-error"></span>
+                        <span id="popup_form_field_name-error"></span>
                         <input type="text" class="popup__form-field" id="popup_form_field_job" name="popup_form_field_job" autocomplete="off" placeholder="О себе" minlength="2" maxlength="200" required>
-                        <span class="popup_form_field_job-error"></span>
+                        <span id="popup_form_field_job-error"></span>
                         <input type="submit" class="popup__form-save_disabled popup__form-save" value="Сохранить">
                     </div>
                 </form>
@@ -57,12 +57,10 @@
                 <button type="button" aria-label="Закрыть" class="popup__close"></button>
                 <form class="popup__form" id="popup_form_add" name="popup_form_add" novalidate>
                     <h2 class="popup__form-title">Новое место</h2>
-                    <div class="popup__form-fields">
                         <input type="text" class="popup__form-field" id="popup_form_field_name_place" name="form_field_name_place" autocomplete="off" placeholder="Название" required>
-                        <span class="popup_form_field_name_place-error"></span>
+                        <span id="popup_form_field_name_place-error"></span>
                         <input type="url" class="popup__form-field" id="popup_form_field_link_place" name="form_field_link_place" autocomplete="off" placeholder="Ссылка на картинку" required>
-                        <span class="popup_form_field_link_place-error"></span>
-                    </div>
+                        <span id="popup_form_field_link_place-error"></span>
                     <input disabled type="submit" class="popup__form-save_disabled popup__form-save" value="Создать">
                 </form>
             </div>
