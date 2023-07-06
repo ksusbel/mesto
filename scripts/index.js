@@ -10,8 +10,8 @@ const popupMod = document.querySelectorAll(".popup");
 const imgPopup = document.querySelector("#popup_full_img");
 const imgFull = document.querySelector(".popup__img-full");
 const imgTitle = document.querySelector(".popup__img-title");
-const namePlaceInput = document.querySelector("#popup_form_field_name_place");
-const linkPlaceInput = document.querySelector("#popup_form_field_link_place");
+const namePlaceInput = document.querySelector("#field-name-place");
+const linkPlaceInput = document.querySelector("#field-link-place");
 const buttonElement = formAddElement.querySelector(".popup__form-save");
 // форма Редактировать профиль
 const editButton = document.querySelector(".profile__edit-button");
@@ -19,8 +19,8 @@ const editPopup = document.querySelector("#popup_edit_prof");
 // Находим форму в DOM
 const formEditElement = document.querySelector("#popup_form_edit");
 // Находим поля формы в DOM
-const nameInput = document.querySelector("#popup_form_field_name");
-const jobInput = document.querySelector("#popup_form_field_job");
+const nameInput = document.querySelector("#field-name");
+const jobInput = document.querySelector("#field-job");
 // Выберите элементы, куда должны быть вставлены значения полей
 const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
@@ -31,7 +31,7 @@ const addPopup = document.querySelector("#popup_add_card");
 function openPopup(popup) {
     popup.classList.add("popup_opened");
     document.addEventListener("keydown", closePopupEsc);
-    buttonElement.classList.add("popup__form-save_disabled");
+    disableButton(buttonElement);
 }
 
 function closePopup(popup) {
@@ -55,11 +55,10 @@ popupMod.forEach(function (item) {
 });
 
 function closePopupEsc(evt) {
-    popupMod.forEach(function (item) {
-        if (evt.key === "Escape") {
-            closePopup(item);
-        }
-    });
+    if (evt.key === "Escape") {
+        const openedPopup = document.querySelector(".popup_opened");
+        closePopup(openedPopup);
+    }
 }
 
 initialCards.forEach(function (element) {
