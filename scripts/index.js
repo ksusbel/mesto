@@ -110,11 +110,10 @@ formAddElement.addEventListener("submit", handleAddFormSubmit);
 
 editButton.addEventListener("click", function () {
     openPopup(editPopup);
+    // Получите значение полей jobInput и nameInput из свойства value
+    nameInput.value = profileName.textContent;
+    jobInput.value = profileDescription.textContent;
 });
-
-// Получите значение полей jobInput и nameInput из свойства value
-nameInput.value = profileName.textContent;
-jobInput.value = profileDescription.textContent;
 
 // Обработчик «отправки» формы, хотя пока она никуда отправляться не будет
 function handleEditFormSubmit(evt) {
