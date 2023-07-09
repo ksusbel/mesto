@@ -26,12 +26,12 @@ const profileName = document.querySelector(".profile__name");
 const profileDescription = document.querySelector(".profile__description");
 // форма Добавить карточку
 const addButton = document.querySelector(".profile__add-button");
+const saveEditButton = formEditElement.querySelector(".popup__form-save");
 const addPopup = document.querySelector("#popup_add_card");
 
 function openPopup(popup) {
     popup.classList.add("popup_opened");
     document.addEventListener("keydown", closePopupEsc);
-    disableButton(buttonElement);
 }
 
 function closePopup(popup) {
@@ -113,6 +113,7 @@ editButton.addEventListener("click", function () {
     // Получите значение полей jobInput и nameInput из свойства value
     nameInput.value = profileName.textContent;
     jobInput.value = profileDescription.textContent;
+    enabledButton(saveEditButton, config);
 });
 
 // Обработчик «отправки» формы, хотя пока она никуда отправляться не будет
