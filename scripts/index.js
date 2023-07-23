@@ -1,8 +1,8 @@
 //debugger;
+import { Card } from "./Card.js";
+import { config, initialCards } from "./constants.js";
+import { FormValidator } from "./FormValidator.js";
 
-const template = document.querySelector("#elements_template");
-const cardsTemplate = template.content;
-const cardConteiner = cardsTemplate.querySelector(".elements__element");
 const cardsList = document.querySelector(".elements__list");
 const formAddElement = document.querySelector("#popup_form_add");
 const closeButtons = document.querySelectorAll(".popup__close");
@@ -12,7 +12,6 @@ const imgFull = document.querySelector(".popup__img-full");
 const imgTitle = document.querySelector(".popup__img-title");
 const namePlaceInput = document.querySelector("#field-name-place");
 const linkPlaceInput = document.querySelector("#field-link-place");
-const buttonElement = formAddElement.querySelector(".popup__form-save");
 // форма Редактировать профиль
 const editButton = document.querySelector(".profile__edit-button");
 const editPopup = document.querySelector("#popup_edit_prof");
@@ -61,51 +60,67 @@ function closePopupEsc(evt) {
     }
 }
 
-initialCards.forEach(function (element) {
-    const newCard = createCard(element.name, element.link);
-    cardsList.append(newCard);
+function hendleClickDelete(cardElement) {
+    console.log("del");
+    cardElement.remove();
+}
+
+function heldleClickLike(event) {
+    console.log("like");
+    event.target.classList.toggle("elements__heart_black");
+}
+
+function hendleClickImgFull(nameCard, linkCard, cardElement) {
+    console.log(nameCard);
+    openPopup(imgPopup);
+    imgTitle.textContent = cardElement.querySelector(".elements__title").textContent;
+    imgFull.src = linkCard;
+    imgFull.alt = nameCard;
+}
+
+initialCards.forEach(function ({ name, link }) {
+    const cardElement = new Card(
+        {
+            name,
+            link,
+            hendleClickDelete,
+            heldleClickLike,
+            hendleClickImgFull,
+        },
+        "#elements_template"
+    ).createCard();
+
+    cardsList.append(cardElement);
 });
 
-function createCard(name, link) {
-    const newCard = cardConteiner.cloneNode(true);
-    const titleCard = newCard.querySelector(".elements__title");
-    const linkCard = newCard.querySelector(".elements__photo-grid");
-    titleCard.textContent = name;
-    linkCard.src = link;
-    linkCard.alt = name;
-
-    const delButton = newCard.querySelector(".elements__dell");
-    delButton.addEventListener("click", function () {
-        newCard.remove();
-    });
-
-    const likeButton = newCard.querySelector(".elements__heart");
-    likeButton.addEventListener("click", function (event) {
-        event.target.classList.toggle("elements__heart_black");
-    });
-
-    const imgButton = newCard.querySelector(".elements__photo-grid");
-
-    imgButton.addEventListener("click", function () {
-        openPopup(imgPopup);
-        imgTitle.textContent = newCard.querySelector(".elements__title").textContent;
-        imgFull.src = link;
-        imgFull.alt = name;
-    });
-
-    return newCard;
+function renderCard({ name, link }) {
+    const cardElement = new Card(
+        {
+            name,
+            link,
+            hendleClickDelete,
+            heldleClickLike,
+            hendleClickImgFull,
+        },
+        "#elements_template"
+    ).createCard();
+    cardsList.prepend(cardElement);
 }
 
-function handleAddFormSubmit(evt) {
-    evt.preventDefault();
-    const form = evt.target;
-    const newCard = createCard(namePlaceInput.value, linkPlaceInput.value);
-    cardsList.prepend(newCard);
+function handleAddFormSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    renderCard({ name: namePlaceInput.value, link: linkPlaceInput.value });
     closePopup(addPopup);
-    form.reset();
+    form.reset(e);
 }
 
-// Прикрепляем обработчик к форме:ы он будет следить за событием “submit” - «отправка»
+function enabledButton(buttonElement, config) {
+    buttonElement.disabled = false;
+    buttonElement.classList.remove(config.inactiveButtonClass);
+}
+
+// Прикрепляем обработчик к форме: он будет следить за событием “submit” - «отправка»
 formAddElement.addEventListener("submit", handleAddFormSubmit);
 
 editButton.addEventListener("click", function () {
@@ -130,3 +145,8 @@ formEditElement.addEventListener("submit", handleEditFormSubmit);
 addButton.addEventListener("click", function () {
     openPopup(addPopup);
 });
+
+const FormInstanceAdd = new FormValidator(config, formAddElement);
+const FormInstanceEdit = new FormValidator(config, formEditElement);
+FormInstanceAdd.enableValidation();
+FormInstanceEdit.enableValidation();
