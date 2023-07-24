@@ -5,37 +5,39 @@ export class Card {
     #templateSelector;
     #hendleClickDelete;
     #heldleClickLike;
-    #hendleClickImgFull;
+    #hendleClickImgFull; 
+    #cardImage;   
 
     #getTemplate() {
         return document.querySelector(this.#templateSelector).content.querySelector(".elements__element").cloneNode(true);
     }
+    
     constructor({ name, link, hendleClickDelete, heldleClickLike, hendleClickImgFull }, templateSelector) {
         this.#name = name;
         this.#link = link;
         this.#templateSelector = templateSelector;
         this.#hendleClickDelete = hendleClickDelete;
         this.#heldleClickLike = heldleClickLike;
-        this.#hendleClickImgFull = hendleClickImgFull;
+        this.#hendleClickImgFull = hendleClickImgFull;   
+        this.#cardElement = this.#getTemplate();
+        this.#cardImage = this.#cardElement.querySelector(".elements__photo-grid");     
     }
 
-    createCard() {
-        this.#cardElement = this.#getTemplate();
-        const titleCard = this.#cardElement.querySelector(".elements__title");
-        const linkCard = this.#cardElement.querySelector(".elements__photo-grid");
+    createCard() {   
+        const titleCard = this.#cardElement.querySelector(".elements__title");      
         titleCard.textContent = this.#name;
-        linkCard.src = this.#link;
-        linkCard.alt = this.#name;
-
-        const delButton = this.#cardElement.querySelector(".elements__dell");
-        delButton.addEventListener("click", () => this.#hendleClickDelete(this.#cardElement));
-
-        const likeButton = this.#cardElement.querySelector(".elements__heart");
-        likeButton.addEventListener("click", this.#heldleClickLike);
-
-        const imgButton = this.#cardElement.querySelector(".elements__photo-grid");
-        imgButton.addEventListener("click", () => this.#hendleClickImgFull(this.#name, this.#link, this.#cardElement));
-
+        this.#cardImage.src = this.#link;
+        this.#cardImage.alt = this.#name;    
+        this.#setEventListeners();
         return this.#cardElement;
     }
+
+    #setEventListeners() {
+        const delButton = this.#cardElement.querySelector(".elements__dell");
+        delButton.addEventListener("click", () => this.#hendleClickDelete(this.#cardElement));
+        const likeButton = this.#cardElement.querySelector(".elements__heart");
+        likeButton.addEventListener("click", this.#heldleClickLike);  
+        this.#cardImage.addEventListener("click", () => this.#hendleClickImgFull(this.#name, this.#link, this.#cardElement));
+      }
+    
 }
