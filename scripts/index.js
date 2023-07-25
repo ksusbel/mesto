@@ -38,16 +38,9 @@ function closePopup(popup) {
     document.removeEventListener("keydown", closePopupEsc);
 }
 
-closeButtons.forEach(function (item) {
-    item.addEventListener("click", function (e) {
-        const parentModal = e.target.closest(".popup");
-        closePopup(parentModal);
-    });
-});
-
 popupMods.forEach((popup) => {
     popup.addEventListener("mousedown", (evt) => {
-        if (evt.target.classList.contains("popup_opened")) {
+        if (evt.target.classList.contains("popup__overflow")) {
             closePopup(popup);
         }
         if (evt.target.classList.contains("popup__close")) {
@@ -63,16 +56,6 @@ function closePopupEsc(evt) {
     }
 }
 
-function hendleClickDelete(cardElement) {
-    //    console.log("del");
-    cardElement.remove();
-}
-
-function heldleClickLike(event) {
-    //    console.log("like");
-    event.target.classList.toggle("elements__heart_black");
-}
-
 function hendleClickImgFull(nameCard, linkCard, cardElement) {
     // console.log(nameCard);
     openPopup(imgPopup);
@@ -86,8 +69,6 @@ function createCard({ name, link }) {
         {
             name,
             link,
-            hendleClickDelete,
-            heldleClickLike,
             hendleClickImgFull,
         },
         "#elements_template"
@@ -117,6 +98,7 @@ formAddElement.addEventListener("submit", handleAddFormSubmit);
 editButton.addEventListener("click", function () {
     openPopup(editPopup);
     // Получите значение полей jobInput и nameInput из свойства value
+    profileFormValidator.resetValidation();
     nameInput.value = profileName.textContent;
     jobInput.value = profileDescription.textContent;
 });

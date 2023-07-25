@@ -51,12 +51,12 @@ export class FormValidator {
         this.#submitButtonElement.classList.remove(this.#inactiveButtonClass);
     }
 
-    resetValidation(e) {
+    resetValidation() {
+        this.#formElement.reset();
         this.#toggleButtonState(); // управляем кнопкой ==
 
         this.#inputList.forEach((inputElement) => {
             this.#hideInputError(inputElement); // очищаем ошибки ==
-            this.#formElement.reset();
         });
     }
 
