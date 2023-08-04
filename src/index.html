@@ -6,11 +6,7 @@
         <meta name="description" content="портфолио Оксаны Беляковой на Яндекс Практикуме">
         <meta name="keywords" content="html, css, javascript">
         <meta name="author" content="Оксана Белякова">
-        <title lang="ru">Mesto</title>
-        <link type="text/css" rel="stylesheet" href="pages/index.css">
-       
-        <script src="scripts/index.js" type="module" defer></script>
-      
+        <title lang="ru">Mesto</title>                
     </head>
     <body class="page">
         <header class="header">
@@ -41,9 +37,9 @@
                 <button type="button" aria-label="Закрыть" class="popup__close"></button>
                 <form class="popup__form" id="popup_form_edit" name="popup_form_edit" novalidate>
                     <h2 class="popup__form-title">Редактировать профиль</h2>
-                        <input type="text" class="popup__form-field" id="field-name" name="popup_form_field_name" autocomplete="off" placeholder="Имя" minlength="2" maxlength="40" required>
+                        <input type="text" class="popup__form-field" id="field-name" name="field-name" autocomplete="off" placeholder="Имя" minlength="2" maxlength="40" required>
                         <span class="field-name-error popup__form-error"></span>
-                        <input type="text" class="popup__form-field" id="field-job" name="popup_form_field_job" autocomplete="off" placeholder="О себе" minlength="2" maxlength="200" required>
+                        <input type="text" class="popup__form-field" id="field-job" name="field-job" autocomplete="off" placeholder="О себе" minlength="2" maxlength="200" required>
                         <span class="field-job-error popup__form-error"></span>
                         <input type="submit" class="popup__form-save_disabled popup__form-save" value="Сохранить">
                 </form>
