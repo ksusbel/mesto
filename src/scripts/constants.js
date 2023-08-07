@@ -32,15 +32,15 @@ export const config = {
     submitButtonSelector: ".popup__form-save",
     inactiveButtonClass: "popup__form-save_disabled",
     inputErrorClass: "popup__input_type_error",
-  };
+};
 
-  export const formAddElement = document.forms["popup_form_add"];
-  export const popupMods = document.querySelectorAll(".popup");
-  export const imgPopup = document.querySelector("#popup_full_img");
-  export const imgFull = document.querySelector(".popup__img-full");
-  export const imgTitle = document.querySelector(".popup__img-title");
-  export const namePlaceInput = document.querySelector("#field-name-place");
-  export const linkPlaceInput = document.querySelector("#field-link-place");
+export const formAddElement = document.forms["popup_form_add"];
+export const popupMods = document.querySelectorAll(".popup");
+export const imgPopup = document.querySelector("#popup_full_img");
+export const imgFull = document.querySelector(".popup__img-full");
+export const imgTitle = document.querySelector(".popup__img-title");
+export const namePlaceInput = document.querySelector("#field-name-place");
+export const linkPlaceInput = document.querySelector("#field-link-place");
 // форма Редактировать профиль
 export const editButton = document.querySelector(".profile__edit-button");
 export const editPopup = document.querySelector("#popup_edit_prof");
