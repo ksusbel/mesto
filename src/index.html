@@ -37,9 +37,9 @@
                 <button type="button" aria-label="Закрыть" class="popup__close"></button>
                 <form class="popup__form" id="popup_form_edit" name="popup_form_edit" novalidate>
                     <h2 class="popup__form-title">Редактировать профиль</h2>
-                        <input type="text" class="popup__form-field" id="field-name" name="field-name" autocomplete="off" placeholder="Имя" minlength="2" maxlength="40" required />
+                        <input type="text" class="popup__form-field" id="field-name" name="username" autocomplete="off" placeholder="Имя" minlength="2" maxlength="40" required />
                         <span class="field-name-error popup__form-error"></span>
-                        <input type="text" class="popup__form-field" id="field-job" name="field-job" autocomplete="off" placeholder="О себе" minlength="2" maxlength="200" required />
+                        <input type="text" class="popup__form-field" id="field-job" name="job" autocomplete="off" placeholder="О себе" minlength="2" maxlength="200" required />
                         <span class="field-job-error popup__form-error"></span>
                         <input type="submit" class="popup__form-save_disabled popup__form-save" value="Сохранить">
                 </form>
@@ -51,9 +51,9 @@
                 <button type="button" aria-label="Закрыть" class="popup__close"></button>
                 <form class="popup__form" id="popup_form_add" name="popup_form_add" novalidate>
                     <h2 class="popup__form-title">Новое место</h2>
-                        <input type="text" class="popup__form-field" id="field-name-place" name="form_field_name_place" autocomplete="off" placeholder="Название" required>
+                        <input type="text" class="popup__form-field" id="field-name-place" name="name" autocomplete="off" placeholder="Название" minlength="2" required>
                         <span class="field-name-place-error popup__form-error"></span>
-                        <input type="url" class="popup__form-field" id="field-link-place" name="form_field_link_place" autocomplete="off" placeholder="Ссылка на картинку" required>
+                        <input type="url" class="popup__form-field" id="field-link-place" name="link" autocomplete="off" placeholder="Ссылка на картинку" required>
                         <span class="field-link-place-error popup__form-error"></span>
                     <input type="submit" class="popup__form-save_disabled popup__form-save" value="Создать">
                 </form>

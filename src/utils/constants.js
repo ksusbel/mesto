@@ -31,10 +31,9 @@ export const config = {
     inputSelector: ".popup__form-field",
     submitButtonSelector: ".popup__form-save",
     inactiveButtonClass: "popup__form-save_disabled",
-    inputErrorClass: "popup__input_type_error",
+    inputErrorClass: "popup__form-field_invalid",
 };
 
-export const formAddElement = document.forms["popup_form_add"];
 export const popupMods = document.querySelectorAll(".popup");
 export const imgPopup = document.querySelector("#popup_full_img");
 export const imgFull = document.querySelector(".popup__img-full");
