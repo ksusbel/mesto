@@ -49,11 +49,11 @@ export class FormValidator {
         });
     }
 
-    _toggleButtonState(isActive) {
+    _toggleButtonState(buttonElement, isActive) {
         if (!isActive) {
-            this._disabledButton();
+            this._disabledButton(buttonElement);
         } else {
-            this._enabledButton();
+            this._enabledButton(buttonElement);
         }
     }
 
