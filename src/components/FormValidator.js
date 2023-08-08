@@ -1,5 +1,4 @@
 export class FormValidator {
-
     constructor(config, formElement) {
         this._config = config;
         this._formElement = formElement;
@@ -43,10 +42,10 @@ export class FormValidator {
         this._submitButtonElement.classList.remove(this._inactiveButtonClass);
     }
 
-    resetValidation() {   
-        this._toggleButtonState(); // управляем кнопкой 
+    resetValidation() {
+        this._toggleButtonState(); // управляем кнопкой
         this._inputList.forEach((inputElement) => {
-            this._hideInputError(inputElement); // очищаем ошибки 
+            this._hideInputError(inputElement); // очищаем ошибки
         });
     }
 
