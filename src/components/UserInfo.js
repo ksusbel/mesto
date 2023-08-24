@@ -16,11 +16,17 @@ export class UserInfo {
 
     // принимает новые данные пользователя и добавляет их на страницу
     setUserInfo(userInfoProf) {
-        this._username.textContent = userInfoProf.name;
-        this._job.textContent = userInfoProf.about;
+        if (userInfoProf.name) {
+            this._username.textContent = userInfoProf.name;
+        }
+        if (userInfoProf.about) {
+            this._job.textContent = userInfoProf.about;
+        }
     }
 
     setUserAvatar(data) {
-        this._avatar.src = data.avatar;
+        if (data.avatar) {
+            this._avatar.src = data.avatar;
+        }
     }
 }

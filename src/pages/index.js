@@ -5,7 +5,7 @@ import { FormValidator } from "../components/FormValidator.js";
 import { Section } from "../components/Section.js";
 import { PopupWithImage } from "../components/PopupWithImage.js";
 import { PopupWithForm } from "../components/PopupWithForm.js";
-import { PopupWithDel } from "../components/PopupWithDel.js";
+import { PopupWithConfirmation } from "../components/PopupWithConfirmation.js";
 import { UserInfo } from "../components/UserInfo.js";
 import { Api } from "../components/Api.js";
 
@@ -23,12 +23,14 @@ const api = new Api({
 
 let userId = null;
 
-api.getAllInfo().then(([userData, cardAll]) => {
-    userId = userData._id;
-    userInfo.setUserInfo(userData);
-    userInfo.setUserAvatar(userData);
-    cardSectionInstance.renderItems(cardAll.reverse());
-});
+api.getAllInfo()
+    .then(([userData, cardAll]) => {
+        userId = userData._id;
+        userInfo.setUserInfo(userData);
+        userInfo.setUserAvatar(userData);
+        cardSectionInstance.renderItems(cardAll.reverse());
+    })
+    .catch((err) => console.log(err));
 
 const popupFormInstanceAdd = new PopupWithForm("#popup_add_card", handleSubmitAdd);
 
@@ -73,7 +75,6 @@ function hendleClickImgFull(name, link) {
 }
 
 function handleClickDelete(cardElement) {
-    //  console.log(cardElement);
     deleteCardPopup.open();
     deleteCardPopup.submitCallback(() => {
         api.removeCard(cardElement.getId())
@@ -88,9 +89,11 @@ function handleClickDelete(cardElement) {
 }
 
 function handleLikeCard(instance) {
-    api.changeLike(instance.getId(), instance.isLiked()).then((dataCardFromServer) => {
-        instance.setLikesData(dataCardFromServer);
-    });
+    api.changeLike(instance.getId(), instance.isLiked())
+        .then((dataCardFromServer) => {
+            instance.setLikesData(dataCardFromServer);
+        })
+        .catch((err) => console.log(err));
 }
 
 function renderNewCard(dataCard) {
@@ -147,5 +150,5 @@ popupFormInstanceEditAvatar.setEventListeners();
 imagePopup.setEventListeners();
 
 // Создаем попап с подтверждением удаления карточки
-const deleteCardPopup = new PopupWithDel({ popupSelector: "#popup_delete-card" });
+const deleteCardPopup = new PopupWithConfirmation({ popupSelector: "#popup_delete-card" });
 deleteCardPopup.setEventListeners();
