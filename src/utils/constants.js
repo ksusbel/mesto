@@ -42,15 +42,17 @@ export const namePlaceInput = document.querySelector("#field-name-place");
 export const linkPlaceInput = document.querySelector("#field-link-place");
 // форма Редактировать профиль
 export const editButton = document.querySelector(".profile__edit-button");
+export const editAvatar = document.querySelector(".profile__avatar-edit-button");
 export const editPopup = document.querySelector("#popup_edit_prof");
-// Находим форму в DOM
-export const formEditElement = document.forms["popup_form_edit"];
+
+
 // Находим поля формы в DOM
 export const nameInput = document.querySelector("#field-name");
 export const jobInput = document.querySelector("#field-job");
+export const avatarInput = document.querySelector("#field-avatar-link");
 // Выберите элементы, куда должны быть вставлены значения полей
 export const profileName = document.querySelector(".profile__name");
-export const profileDescription = document.querySelector(".profile__description");
+export const profileJob = document.querySelector(".profile__description");
 // форма Добавить карточку
 export const addButton = document.querySelector(".profile__add-button");
 export const addPopup = document.querySelector("#popup_add_card");

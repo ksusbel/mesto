@@ -8,7 +8,7 @@
   cursor: pointer;
   border: none;
   background-color: #fff;
-  
+  margin: 0;
 }
 
 .elements__heart:hover {
